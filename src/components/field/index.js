@@ -284,6 +284,7 @@ export default class TextField extends PureComponent {
       baseColor,
       textColor,
       errorColor,
+      containerStyle: propsContainerStyle,
       ...props
     } = this.props;
 
@@ -392,7 +393,7 @@ export default class TextField extends PureComponent {
 
     return (
       <View onStartShouldSetResponder={ () => true } onResponderRelease={this.onPress}>
-        <Animated.View style={[styles.container, containerStyle]}>
+        <Animated.View style={[styles.container, containerStyle, propsContainerStyle]}>
           {disabled && <Line type='dotted' color={baseColor} />}
 
           <Label {...labelProps}>{label}</Label>
